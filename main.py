@@ -2,15 +2,13 @@ from fastapi import FastAPI
 
 app= FastAPI()
 
-# Sample betting odds
+# Updated betting odds
 odds_data = {
     "NBA": [
-        {"team": "Lakers", "odds": -110},
-        {"team": "Warriors", "odds": +120}
+        {"matchup": "GS Warriors vs ORL Magic", "moneyline": {"Warriors": -200, "Magic": +168}}
     ],
-    "NFL": [
-        {"team": "Cowboys", "odds": -150},
-        {"team": "Eagles", "odds": +130}
+    "NCAAMB": [
+        {"matchup": "Rutgers vs Michigan", "moneyline": {"Rutgers": +360, "Michigan": -480}}
     ]
 }
 
@@ -18,5 +16,5 @@ odds_data = {
 def read_root():
     return {"message": "Welcome to the Nuff Parlay API!"}
 @app.get("/odds/{sport}")
-def get_odds(sport: str):
+def get_odds(sport: str): # case-insensitive
     return odds_data.get(sport, {"message": "Sport not found"})
