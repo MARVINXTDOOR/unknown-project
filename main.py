@@ -6,7 +6,7 @@ import random
 app = FastAPI()
 
 # Replace 'your_api_key_here' with your actual API key or set it as an environment variable.
-ODDS_API_KEY = os.getenv("ODDS_API_KEY", "your_api_key_here")
+ODDS_API_KEY = os.getenv("ODDS_API_KEY", "53c0489779f5a6f1a1d6e46556979c1a")
 # Base URL for The Odds API v4 (example using head-to-head odds)
 ODDS_API_BASE_URL = "https://api.the-odds-api.com/v4/sports"
 
